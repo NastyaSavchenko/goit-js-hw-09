@@ -34,6 +34,7 @@ refs.start.addEventListener('click', onStartClick);
 function onStartClick() {
     timer();
     refs.start.disabled = true;
+    refs.timer.disabled = true;
 };
 
 function timer() {
@@ -47,10 +48,7 @@ function timer() {
       if (differenceOfTime > 0) {
         convertMs(differenceOfTime);
       } else {
-        function stop () {
-            clearInterval(intervalId);
-          }
-          stop();
+        clearInterval(intervalId);
       }
     }, 1000);
   }
